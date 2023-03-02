@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="htl-btn">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-light bg-primary">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                            aria-expanded="false">
+                            Sort Product <i class="bi bi-arrow-down-up mr-1"></i> 
+                        </button>
+                        <div class="dropdown-menu">
+                            <button class="dropdown-item" (click)="hightolow('Price')" type="button">High to Low</button>
+                            <button class="dropdown-item" (click)="lowtohigh()" type="button">Low to High</button>
+                        </div>
+                    </div>
+                    <div class="beedback-btn float-right">
+                        <button type="button" (click)="feedback()" class="btn btn-warning">feedBack</button>
+                        <button type="button" (click)="logout()" class="btn btn-danger ml-3">logout</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="products">
+        <div class="row" (scroll)="onScroll($event)">
+            <div class=" col-xs-12 col-sm-6 col-md-4 col-lg-3"
+                *ngFor="let pdata of first | orderBy: orderhandler : disorder">
+                <div class="card mb-4 d-flex justify-content-around" style="width: 15rem;">
+                    <div class="card-body">
+                        <img class="p-image text-center" [src]="pdata.ListImagePath + pdata.Images.split('|')[0]"
+                            alt="">
+                        <h6><span>Collection:</span> {{pdata.Collection}}</h6>
+                        <p><span>Price:</span>{{pdata.Price}}</p>
+                        <p><span>Product Title:</span> {{pdata.ProductTitle}}</p>
+                        <p><span>StyleName:</span> {{pdata.StyleName}}</p>
+                        <p><span>StyleNumber:</span> {{pdata.StyleNumber}}</p>
+                        <p><span>NetQuantity:</span> {{pdata.NetQuantity}}</p>
+                        <p><span>ProductCode:</span> {{pdata.ProductCode}}</p>
+                        <p><span>AvailableSizes</span> {{pdata.AvailableSizes}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

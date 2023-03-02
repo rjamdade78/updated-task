@@ -1,0 +1,21 @@
+.htl-btn{
+    margin: 20px 0px;
+}
+
+.p-image{
+    width: 100px;
+    height: 100px;
+}
+.card{
+    padding: 7px;
+    margin-bottom: 5px;
+    height: 375px;
+    /* height: 300px; */
+}
+.card-body p{
+    font-size: 14px;
+    margin: 0px;
+}
+.card-body p span{
+    font-weight: bold;
+}
